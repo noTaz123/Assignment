@@ -2,14 +2,21 @@
 
 namespace Car
 {
+    public class car
+    {
+        //declaring fields
+        public string c1make, c1model, sc1val, c2make, c2model, sc2val, c3make, c3model, sc3val;
+
+    }
     class Program
     {
         static void Main(string[] args)
         {
             //declaring the variables
-            string c1make, c1model, sc1val, sLval, c2make, c2model, sc2val, c3make, c3model, sc3val;
+            string sLval;
             int speedc1, speedc2, speedc3, speedLimit, demeritc1, demeritc2, demeritc3;
             bool issLInt, isSc1Int, isSc2Int, isSc3Int;
+            car c = new car(); //creating an instance of the car class
 
             //Program Description
             Console.WriteLine("**********************************************************************");
@@ -32,39 +39,39 @@ namespace Car
                 Console.Write("\n");
                 //Entering Data for car 1
                 Console.Write("Enter the make of Car 1: ");
-                c1make = Console.ReadLine();
+                c.c1make = Console.ReadLine();
 
                 Console.Write("Enter the model of Car 1: ");
-                c1model = Console.ReadLine();
+                c.c1model = Console.ReadLine();
 
                 Console.Write("Enter the speed of Car 1 in mph: ");
-                sc1val = Console.ReadLine();
+                c.sc1val = Console.ReadLine();
 
                 Console.Write("\n");
                 //Entering Data for Car 2
                 Console.Write("Enter the make of Car 2: ");
-                c2make = Console.ReadLine();
+                c.c2make = Console.ReadLine();
 
                 Console.Write("Enter the model of Car 2: ");
-                c2model = Console.ReadLine();
+                c.c2model = Console.ReadLine();
 
                 Console.Write("Enter the speed of Car 2 in mph: ");
-                sc2val = Console.ReadLine();
+                c.sc2val = Console.ReadLine();
 
                 Console.Write("\n");
                 //Entering Data for Car 3
                 Console.Write("Enter the make of Car 3: ");
-                c3make = Console.ReadLine();
+                c.c3make = Console.ReadLine();
 
                 Console.Write("Enter the model of Car 3: ");
-                c3model = Console.ReadLine();
+                c.c3model = Console.ReadLine();
 
                 Console.Write("Enter the speed of Car 3 in mph: ");
-                sc3val = Console.ReadLine();
+                c.sc3val = Console.ReadLine();
 
-                isSc1Int = int.TryParse(sc1val, out speedc1);
-                isSc2Int = int.TryParse(sc2val, out speedc2);
-                isSc3Int = int.TryParse(sc3val, out speedc3);
+                isSc1Int = int.TryParse(c.sc1val, out speedc1);
+                isSc2Int = int.TryParse(c.sc2val, out speedc2);
+                isSc3Int = int.TryParse(c.sc3val, out speedc3);
 
                 if(isSc1Int == true && isSc2Int == true && isSc3Int == true)
                 {
@@ -74,19 +81,19 @@ namespace Car
                     Console.Write("\n\nRESULTS\n\n");
                     Console.WriteLine("Speed Limit: " + speedLimit + "mph");
                     Console.WriteLine(" ");
-                    Console.Write(String.Format("{0,-12}", c1make) + String.Format("{0,-17}", c1model)  + String.Format("{0,-10}", speedc1 +"mph: "));
+                    Console.Write(String.Format("{0,-12}", c.c1make) + String.Format("{0,-17}", c.c1model)  + String.Format("{0,-10}", speedc1 +"mph: "));
                     if (demeritc1 < 1) { Console.Write(String.Format("{0,-15}", "OK!"));}
                     else { Console.Write(String.Format("{0,-15}", demeritc1 + " demerits")); }
                     if (demeritc1 >= 10) { Console.Write("\t<LICENSE SUSPENDED>\n"); }
                     else Console.WriteLine();
 
-                    Console.Write(String.Format("{0,-12}", c2make) + String.Format("{0,-17}", c2model) + String.Format("{0,-10}", speedc2 + "mph: "));
+                    Console.Write(String.Format("{0,-12}", c.c2make) + String.Format("{0,-17}", c.c2model) + String.Format("{0,-10}", speedc2 + "mph: "));
                     if (demeritc2 < 1) { Console.Write(String.Format("{0,-15}", "OK!")); }
                     else { Console.Write(String.Format("{0,-15}", demeritc2 + " demerits")); }
                     if (demeritc2 >= 10) { Console.Write("\t<LICENSE SUSPENDED>\n"); }
                     else Console.WriteLine();
 
-                    Console.Write(String.Format("{0,-12}", c3make) + String.Format("{0,-17}", c3model) + String.Format("{0,-10}",speedc3 + "mph: "));
+                    Console.Write(String.Format("{0,-12}", c.c3make) + String.Format("{0,-17}", c.c3model) + String.Format("{0,-10}",speedc3 + "mph: "));
                     if (demeritc3 < 1) { Console.Write(String.Format("{0,-15}", "OK!")); }
                     else { Console.Write(String.Format("{0,-15}", demeritc3 + " demerits")); }
                     if (demeritc3 >= 10) { Console.Write("\t<LICENSE SUSPENDED>\n"); }

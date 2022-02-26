@@ -162,6 +162,7 @@ namespace Assignment5
                     {
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine("You Won!");
+                        Console.ForegroundColor = ConsoleColor.White;
                         myGuess = true;
                         guessLeft = 0;
                     }
@@ -179,8 +180,10 @@ namespace Assignment5
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine("Game Over!");
+                Console.WriteLine("The computer generated number is " + num);
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine("You Lost ...");
+                Console.ForegroundColor = ConsoleColor.White;
             }
             
         }
@@ -195,9 +198,10 @@ namespace Assignment5
             }
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("*********************************************************************");
-            Console.WriteLine(" A program that picks a random number between 1 and 10. The user has ");
-            Console.WriteLine(" 4 chances to guess the number. If the user guesses the number, the");
-            Console.WriteLine(" program displays \"You won\" otherwise, program displays \"You lost\"");
+            Console.WriteLine(" A program that asks the user to enter a series of numbers ");
+            Console.WriteLine(" separated by comma and finds the maximum of the numbers and display ");
+            Console.WriteLine(" it on the console. For example, if the user enters \"5, 3, 8, 1, 4\",");
+            Console.WriteLine(" the program should display 8.");
             Console.WriteLine("*********************************************************************");
             Console.WriteLine("");
             int max;
@@ -223,6 +227,7 @@ namespace Assignment5
             }
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("The maximum number of the group is: " + max);
+            Console.ForegroundColor = ConsoleColor.White;
 
         }
     }

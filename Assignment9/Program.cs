@@ -51,7 +51,7 @@ namespace Assignment9
             StreamReader sr = new StreamReader(path);
             while(!sr.EndOfStream)
             {
-                w += sr.ReadLine();
+                w += sr.ReadLine()+' '; //Found a fix. Added a space at the end of each new line. 
                 // words = w.Split(' ');   
                 //Console.WriteLine(w);
             }
@@ -68,29 +68,41 @@ namespace Assignment9
                 count += 1;
             }*/
 
-            listOfWords = w.Split(' ').ToList();
+            listOfWords = w.Split('.',' ').ToList();
+            listOfWords.RemoveAll(string.IsNullOrWhiteSpace);
 
 
+            /*for (int i = listOfWords.Count - 1; i >= 0; i--)
+            {
+                if (listOfWords[i] == " ")
+                {
+                    listOfWords.RemoveAt(i);
+                }
+            }
 
-            /* foreach (string h in listOfWords)
+            
+            foreach (string h in listOfWords)
              {
-                 Console.WriteLine(h);
+                Console.WriteLine(h);
              }*/
+             
             Console.WriteLine("*****************************");
             Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("Using a List");
             Console.ForegroundColor = ConsoleColor.White;
-            int count = listOfWords.Capacity;
+            int count = listOfWords.Count;
             Console.WriteLine("Word count: "+count+" words.");
             Console.WriteLine("******************************");
             //Console.BackgroundColor = ConsoleColor.Green;
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            /*Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("Using File ReadAllLines approach");
             Console.ForegroundColor = ConsoleColor.White;
             string[] FileContents = File.ReadAllLines(path);
+            //string readFile = File.ReadAllText(path);
+            //int wordCount = (readFile.Split(' ','.').Count();
             int wordCount = File.ReadAllText(path).Split(' ').Count();
             Console.WriteLine("Word count: "+wordCount+" words.");
-            Console.WriteLine(' ');
+            Console.WriteLine(' ');*/
         }
     }
     class Program
